@@ -1,8 +1,10 @@
-include README.rst
+include README.md
 include INSTALL
 include LICENSE
 include MANIFEST.in
 recursive-include pyevo *
+recursive-include pyevo/api *
+recursive-include pyevo/strings *
 recursive-include * *
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
