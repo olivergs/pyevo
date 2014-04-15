@@ -7,6 +7,8 @@ PyEVO reCAPTCHA API module
     :platform: Unix, Windows
     :synopsis: PyEVO reCAPTCHA API module 
 .. moduleauthor:: (C) 2012 Oliver Gutiérrez
+
+TODO: Check recaptcha API module for incomplete class method get_challenge
 """
 
 # Python imports
@@ -64,10 +66,10 @@ class RECAPTCHAHelper(object):
         # Failed verification
         return False
     
-    def get_challenge(self):
-        """
-        TODO: Get reCAPTCHA image and challenge data
-        """
-        challenge=
-        imgurl='http://www.google.com/recaptcha/api/image?c=%s' % challenge
-        pass
+#    def get_challenge(self):
+#        """
+#        TODO: Get reCAPTCHA image and challenge data
+#        """
+#        challenge=
+#        imgurl='http://www.google.com/recaptcha/api/image?c=%s' % challenge
+#        pass
