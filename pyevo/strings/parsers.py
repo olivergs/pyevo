@@ -61,7 +61,7 @@ def extract_hashtags(text,extra=[]):
     Returns a list of hashtags for given text
     """
     # Compile regular expression
-    hr=re.compile(r'\#\w+',text.decode('utf8'),re.UNICODE)
+    hr=re.compile(ur'\#\w+',re.UNICODE)
     hashtags=hr.findall(text)
     if extra:
         # Split text in words
