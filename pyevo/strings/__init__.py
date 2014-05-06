@@ -10,7 +10,7 @@ PyEVO string tools
 """
 
 # Python imports
-import random,string,re
+import random,string,re,unicodedata
 
 def check_mixed_caps(value):
     """
@@ -143,3 +143,9 @@ def word_count(text,separator=' '):
     :rtype: Integer
     """
     return len(text.split(separator))
+
+def utf8toascii(text):
+    """
+    Converts UTF8 text to ASCII
+    """
+    return unicodedata.normalize('NFKD',text).encode('ascii','ignore').decode('ascii')
