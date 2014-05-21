@@ -72,6 +72,15 @@ def extract_hashtags(text,extra=[]):
                 hashtags.append(word)
     return list(set(hashtags))
 
+def match_any(text,patternlist):
+    """
+    Checks if text matches any of given strings or regexp list
+    """
+    for pattern in patternlist:
+        if text == pattern or (isinstance(pattern,re.RegexObject) and pattern.match(text)):
+            return True 
+    return False
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
