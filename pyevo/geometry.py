@@ -9,7 +9,7 @@ PyEVO geometry tools
 .. moduleauthor:: (C) 2013 Oliver Gutiérrez
 """
 
-def maxed_rect(max_width,max_height,aspect_ratio=None):
+def maxed_rect(max_width,max_height,aspect_ratio):
     """
     Calculates maximized width and height for a rectangular area not exceding a maximum width and height.
     
