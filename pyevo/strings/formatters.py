@@ -127,3 +127,21 @@ def phone_number_hide_formatter(value,number=3,symbol='X'):
     :rtype: String
     """
     return value[:-3] + 'XXX'
+
+def to_hashtag(value, camelcased=False, separator=''):
+    """
+    Convert given string to a valid hashtag
+
+    By default the hashtag is converted to lowercase and all spaces are stripped
+    """
+    words=value.split(' ')
+    wordlist=[]
+    for word in words:
+        if camelcased:
+            wordlist.append(word[0].upper() + word[1:])
+        else:
+            wordlist.append(word)
+    hashtag=u'#%s' % separator.join(wordlist)
+    if not camelcased:
+        return hashtag.lower()
+    return hashtag
