@@ -26,10 +26,19 @@ from pyevo.http import nvp_request
 
 PUSHOVER_ENDPOINT='https://api.pushover.net/1/messages.json'
 
+PUSHOVER_SOUNDS=['pushover','bike','bugle','cashregister',
+                  'classical','cosmic','falling','gamelan',
+                  'incoming','intermission','magic','mechanical',
+                  'pianobar','siren','spacealarm','tugboat',
+                  'alien','climb','persistent','echo','updown','none']
+
 def send_notification(token,user,message,endpoint=PUSHOVER_ENDPOINT,sound='pushover',**kwargs):
     """
     Sends a notification
     """
+    if sound not in PUSHOVER_SOUNDS:
+        raise ValueError('You must select a valid sound')
+
     data={
         'token': token,
         'user': user,
