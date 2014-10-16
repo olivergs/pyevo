@@ -26,14 +26,16 @@ from pyevo.http import nvp_request
 
 PUSHOVER_ENDPOINT='https://api.pushover.net/1/messages.json'
 
-def send_notification(token,user,message,endpoint=PUSHOVER_ENDPOINT):
+def send_notification(token,user,message,endpoint=PUSHOVER_ENDPOINT,sound='pushover',**kwargs):
     """
     Sends a notification
     """
     data={
         'token': token,
         'user': user,
-        'message': message
+        'message': message,
+        'sound': sound,
     }
+    data.update(kwargs)
     resp=nvp_request(endpoint,data,method='POST',json=True)
     return resp
