@@ -13,6 +13,12 @@ PyEVO date tool utilities
 import calendar
 from datetime import datetime,timedelta,time
 
+def date_from_iso8601_utc(date_string, format_string='%Y-%m-%dT%H:%M:%S.%fZ'):
+    """
+    Gets a date from UTC ISO-8601 string
+    """
+    return datetime.strptime(date_string, format_string)
+
 def date_range(start,end):
     """
     Returns a range of dates
