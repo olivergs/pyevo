@@ -25,7 +25,7 @@ def date_to_iso8601_utc(date, format_sting=ISO_8601_UTC_FORMAT):
     """
     Converts a date to UTC ISO-8601 string
     """
-    return date.strftime(TIMESTAMP_FORMAT)
+    return date.strftime(format_string)
 
 def date_range(start,end):
     """
