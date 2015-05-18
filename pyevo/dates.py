@@ -21,7 +21,7 @@ def date_from_iso8601_utc(date_string, format_string=ISO_8601_UTC_FORMAT):
     """
     return datetime.strptime(date_string, format_string)
 
-def date_to_iso8601_utc(date, format_sting=ISO_8601_UTC_FORMAT):
+def date_to_iso8601_utc(date, format_string=ISO_8601_UTC_FORMAT):
     """
     Converts a date to UTC ISO-8601 string
     """
