@@ -12,7 +12,7 @@ PyEVO HTTP utilities module
 # Python imports
 import urllib, urllib2, json as jsonmodule
 
-def nvp_request(url,data={},method="GET",json=False,charset='utf-8'):
+def nvp_request(url,data={},method="GET",json=False,charset='utf-8',*args,**kwargs):
     """
     Name-Value Pair request helper
     """
@@ -26,9 +26,9 @@ def nvp_request(url,data={},method="GET",json=False,charset='utf-8'):
             encoded_dict[k]=value
     encodeddata=urllib.urlencode(encoded_dict)
     if method.upper() == "POST":
-        resp=urllib2.urlopen(url, encodeddata).read()
+        resp=urllib2.urlopen(url, encodeddata, *args, **kwargs).read()
     else:
-        resp=urllib2.urlopen(url + "?" + encodeddata).read()
+        resp=urllib2.urlopen(url + "?" + encodeddata, *args, **kwargs).read()
     if json:
         return jsonmodule.loads(resp)
     return resp
